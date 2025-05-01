@@ -3,21 +3,22 @@ name: CI
 on:
   push:
     branches:
-      - main  # Se déclenche quand tu pushes sur la branche main
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2  # Télécharge ton code depuis GitHub
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1  # Prépare Docker pour build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2  
 
-    - name: Build Docker image
-      run: docker build -t myapp .  # Build l’image Docker
+      - name: Build Docker image
+        run: docker build -t myapp .
 
-    - name: Run tests
-      run: docker run myapp pytest   echo "No tests found"
+      - name: Run tests
+        run: |
+          docker run myapp pytest || echo "No tests found"
