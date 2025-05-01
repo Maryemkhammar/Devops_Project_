@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prévisualisation du CV</title>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+<body>
+    <h1>Prévisualisation du CV</h1>
+    <p><strong>Nom :</strong> {{ data.name }}</p>
+    <p><strong>Email :</strong> {{ data.email }}</p>
+    <p><strong>Résumé :</strong> {{ data.summary }}</p>
+
+    <h3>Compétences :</h3>
+    <ul>
+        {% for skill in data.skills %}
+            <li>{{ skill.strip() }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
