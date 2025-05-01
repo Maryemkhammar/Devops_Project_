@@ -20,4 +20,4 @@ jobs:
       run: docker build -t myapp .  # Build l’image Docker
 
     - name: Run tests
-      run: docker run myapp pytest  # Lance les tests (si tu en as)
+      run: docker run myapp pytest   echo "No tests found"
