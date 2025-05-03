@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Générateur de CV</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+<body>
+    <h1>Formulaire de création de CV</h1>
+    <form method="POST">
+        <label for="name">Nom :</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <label for="summary">Résumé :</label><br>
+        <textarea name="summary" id="summary" required></textarea><br><br>
+
+        <label for="skills">Compétences (séparées par des virgules) :</label><br>
+        <input type="text" name="skills" id="skills" required><br><br>
+
+        <button type="submit">Prévisualiser</button>
+    </form>
+</body>
+</html>

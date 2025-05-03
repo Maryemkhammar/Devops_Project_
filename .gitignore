@@ -1,0 +1,13 @@
+node_modules/
+__pycache__/
+*.sqlite
+venv/
+__pycache__/
+*.pyc
+*.env
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.log
+DockerDesktopWSL/
+*.vhdx
